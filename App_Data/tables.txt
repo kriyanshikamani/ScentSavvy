@@ -1,0 +1,84 @@
+CREATE TABLE [dbo].[Admin] (
+    [Id]       INT          IDENTITY (1, 1) NOT NULL,
+    [Username] VARCHAR (50) NULL,
+    [Password] VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[card] (
+    [Id]       INT          IDENTITY (1, 1) NOT NULL,
+    [custid]   INT          NULL,
+    [cardno]   VARCHAR (20) NULL,
+    [bankname] VARCHAR (20) NULL,
+    [cvv]      VARCHAR (20) NULL,
+    [expiry]   VARCHAR (20) NULL,
+    [amount]   FLOAT (53)   NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Cart] (
+    [Id]     INT        IDENTITY (1, 1) NOT NULL,
+    [Custid] INT        NULL,
+    [Prodid] INT        NULL,
+    [Qty]    INT        NULL,
+    [Amount] FLOAT (53) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Categories] (
+    [Id]      INT           IDENTITY (1, 1) NOT NULL,
+    [Catname] VARCHAR (50)  NULL,
+    [Image]   VARCHAR (150) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Feedback] (
+    [Id]         INT           IDENTITY (1, 1) NOT NULL,
+    [First_name] VARCHAR (50)  NULL,
+    [Last_name]  VARCHAR (50)  NULL,
+    [Contact_no] VARCHAR (50)  NULL,
+    [Feedback]   VARCHAR (250) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[orders] (
+    [Id]     INT IDENTITY (1, 1) NOT NULL,
+    [custid] INT NULL,
+    [pid]    INT NULL,
+    [qty]    INT NULL,
+    [amt]    INT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Payment] (
+    [Id]             INT          IDENTITY (1, 1) NOT NULL,
+    [Custid]         INT          NULL,
+    [Amount]         FLOAT (53)   NULL,
+    [Delivery_add]   VARCHAR (50) NULL,
+    [Contact_person] VARCHAR (50) NULL,
+    [Alt_phone]      VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Products] (
+    [Id]          INT            IDENTITY (1, 1) NOT NULL,
+    [Catid]       INT            NULL,
+    [Pname]       NVARCHAR (MAX) NULL,
+    [Company]     VARCHAR (50)   NULL,
+    [Description] NVARCHAR (MAX) NULL,
+    [Price]       VARCHAR (50)   NULL,
+    [Image]       NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Registration] (
+    [Id]         INT          IDENTITY (1, 1) NOT NULL,
+    [First_name] VARCHAR (50) NULL,
+    [Last_name]  VARCHAR (50) NULL,
+    [Contact_No] VARCHAR (15) NULL,
+    [E_mail]     VARCHAR (50) NULL,
+    [Username]   VARCHAR (50) NULL,
+    [Password]   VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
