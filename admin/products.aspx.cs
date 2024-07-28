@@ -13,13 +13,15 @@ public partial class admin_products : System.Web.UI.Page
         if (Request["delid"] != null)
             db.setdata("delete from Products where Id = " + Request["delid"]);
         DataTable dt = db.getdata("Select * from Products");
-        String str = "<table border =1 width = 100%>";
-        str += "<Tr><Td>srno<td>category<td>productname<td>company<td>description<td>price<td>image<td>action<td>action</tr>";
+        String str = "<div class='container mt-4'>";
+        str += "<table class='table table-bordered'>";
+        str += "<thead class='table-dark'><tr><th>Sr No</th><th>Category</th><th>Expire Date</th><th>Company</th><th>Description</th><th>Price</th><th>Image</th><th>Action</th><th>Action</th></tr></thead><tbody>";
+
         for(int i = 0; i <dt.Rows.Count;i++)
         {
             str += "<Tr><Td>" + (i + 1);
             DataTable dt1 = db.getdata("Select * from Categories where Id=" + dt.Rows[i]["Catid"].ToString());
-            str += "<td>" + dt1.Rows[0]["Catname"].ToString(); 
+            //str += "<td>" + dt1.Rows[0]["Catname"].ToString(); 
                 
             str += "<td>" + dt.Rows[i]["Pname"].ToString();
             str += "<Td>" + dt.Rows[i]["Company"].ToString();

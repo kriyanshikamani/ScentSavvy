@@ -11,10 +11,14 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["uid"] == null)
-            Literal1.Text = "<li class='nav-item'><a class='nav-link' href='login.aspx'>Login</a>";
+        {
+            Literal1.Text = "<li class='nav-item'><a class='nav-link font-weight-bold' href='login.aspx' style='font-size: 18px; color: #b38b6d;'>Login</a>";
+        }
         else
-            Literal1.Text = "<li class='nav-item'><a class='nav-link' href='logout.aspx'>Logout</a>";
+        {
+            Literal1.Text = "<li class='nav-item'><a class='nav-link font-weight-bold' href='logout.aspx' style='font-size: 18px; color: #b38b6d;'>Logout</a>";
 
+        }
 
     }
 }

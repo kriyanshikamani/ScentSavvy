@@ -29,10 +29,13 @@ public partial class showproducts : System.Web.UI.Page
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                str += "<div class='m-4'><div class='card border border-secondary' style='width:150px; height: 250px;'>";
+                str += "<div class='col-md-3 mb-4'>";
+                str += "<div class='card border border-secondary h-100'>";
                 str += "<a href=show_product_details.aspx?t1=" + dt.Rows[i]["Id"].ToString() + ">";
-                str += "<img class='card-img-top p-2' src='Project_images/" + dt.Rows[i]["Image"].ToString() + "' style='width: 100%; height:200px; object-fit: cover;'>";
-                str += "<div class='card-body'><h3 class='card-title'>" + dt.Rows[i]["Pname"].ToString() + "</h3></div></a></div></div>";
+                str += "<img class='card-img-top' src='Project_images/" + dt.Rows[i]["Image"].ToString() + "' style='height: 200px; object-fit: cover;'>";
+                str += "<div class='card-body'>";
+                str += "<p class='card-text text-truncate'>" + dt.Rows[i]["Pname"].ToString() +"</p>";
+                str += "</div></a></div></div>";
             }
 
             // End the flex container

@@ -20,18 +20,20 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-6 control-group">
-                                    <asp:TextBox  runat="server"  class="form-control p-4" id="textbox2" placeholder="Your Email" required="required"   data-validation-required-message="Please enter your email" > </asp:TextBox>
+                                    <asp:TextBox  runat="server"  class="form-control p-4" id="textbox2" placeholder="Message" required="required"   data-validation-required-message="Please enter your email" > </asp:TextBox>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <asp:TextBox runat="server" class="form-control p-4" id="textbox3" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" > </asp:TextBox>
+                                <asp:TextBox runat="server" class="form-control p-4" id="textbox3" placeholder="Priority" required="required" data-validation-required-message="Please enter a subject" > </asp:TextBox>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <asp:TextBox runat="server" class="form-control p-4" rows="6" id="textbox4" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></asp:TextBox>
+                                <asp:TextBox runat="server" class="form-control p-4" rows="6" id="textbox4" placeholder="Number" required="required" data-validation-required-message="Please enter your message"></asp:TextBox>
                                 <p class="help-block text-danger"></p>
                             </div>
+
+                             
                             <div>
                                 <asp:Button runat="server" class="btn btn-primary btn-block py-3 px-5" type="submit" id="button1" Text="Send Message" OnClick="button1_Click1"></asp:Button>
                             </div>

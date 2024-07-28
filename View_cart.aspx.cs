@@ -14,6 +14,7 @@ public partial class View_cart : System.Web.UI.Page
             Response.Redirect("login.aspx");
 
         string str = "";
+        int qty=0;
         Dbo db = new Dbo();
 
         if (Request.QueryString["t1"] != null)
@@ -38,9 +39,11 @@ public partial class View_cart : System.Web.UI.Page
             str += "    <div class='col-md-3 col-lg-3 col-xl-2 d-flex'>";
             str += "        <span>" + dt.Rows[i]["qty"].ToString() + "</span>";
             str += "    </div>";
+            qty+=Convert.ToInt32(dt.Rows[i]["qty"]);
             str += "    <div class='col-md-3 col-lg-2 col-xl-2 offset-lg-1'>";
-            str += "         <h6 class='mb-0'>€ " + dt.Rows[i]["Amount"].ToString() + "</h6>";
+            str += "         <h6 class='mb-0'>Rs. " + dt.Rows[i]["Amount"].ToString() + "</h6>";
             str += "    </div>";
+            total += Convert.ToInt32(dt.Rows[i]["Amount"]);
             str += "    <div class='col-md-1 col-lg-1 col-xl-1 text-end'>";
             str += "         <a href='View_cart.aspx?t1=" + dt.Rows[i]["Id"].ToString() + "'><img src='Project_images/cross.png' style='width: 100%;  height= 100px; object-fit: cover;'></a>";
             str += "    </div>";
@@ -48,8 +51,11 @@ public partial class View_cart : System.Web.UI.Page
         }
 
         Session["total"] = total;
-        str += "<h1>Total = " + total + "<br><a href='payment_options.aspx?t1=" + total + "'>Checkout</a>";
-        Literal4.Text = total.ToString();
+        str += "<h1>Total = " + total + "</h1><br><a href='payment_options.aspx?t1=" + total + "' style='display: inline-block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; transition: background-color 0.3s ease;'>Checkout</a>";
+
+
+        Literal4.Text = qty.ToString();
         Literal2.Text = str;
+        Literal5.Text = total.ToString();
     }
 }

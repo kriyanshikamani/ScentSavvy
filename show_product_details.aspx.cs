@@ -28,7 +28,7 @@ public partial class show_product_details : System.Web.UI.Page
         str += "<div class='col-md-8'>";
         str += "<h2>" + dt.Rows[0]["Pname"].ToString() + "</h2>";
         str += "<p>Company: " + dt.Rows[0]["Company"].ToString() + "</p>";
-        str += "<p>Price: $" + dt.Rows[0]["Price"].ToString() + "</p>";
+        str += "<p>Price: RS." + dt.Rows[0]["Price"].ToString() + "</p>";
         str += "<p>Description: " + dt.Rows[0]["Description"].ToString() + "</p>";
         str += "</div>";
         str += "</div>";

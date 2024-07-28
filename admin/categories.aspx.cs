@@ -13,8 +13,9 @@ public partial class admin_categories : System.Web.UI.Page
         if (Request["delid"] != null)
             db.setdata("delete from Categories where Id = " + Request["delid"]);
         DataTable dt = db.getdata("Select * from Categories");
-        String str = "<table border =1 width = 100%>";
-        str += "<Tr><Td>srno<td>category name<td>image<td>action<td>action</tr>";
+        String str = "<div class='container mt-4'>";
+        str += "<table class='table table-striped table-bordered'>";
+        str += "<thead class='table-dark'><tr><th>Sr No</th><th>Category Name</th><th>Image</th><th>Action</th><th>Action</th></tr></thead><tbody>";
         for (int i = 0; i < dt.Rows.Count; i++)
         {
             str += "<Tr><Td>" + (i + 1);

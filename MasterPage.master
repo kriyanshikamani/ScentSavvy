@@ -28,83 +28,98 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+     
+    <style>
+    .main-content {
+        max-height: calc(100vh - 200px) !important;
+        overflow-y: auto !important;
+        margin-top: 20px; /* Add space between header and main content */
+        margin-bottom: 20px; /* Add space between main content and footer */
+    }
+
+    .main-content::-webkit-scrollbar {
+        width: 0 !important;
+    }
+     @media print {
+            .footer-area {
+                display: none;
+            }
+        }
+</style>
+
+
+
 </head>
 <body>
     <!-- Start heade-->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="" />
-            </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="home.aspx">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="categories.aspx">Categories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="View_cart.aspx">My Cart</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactus.aspx">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.aspx">About Us</a></li>
-                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
-                </ul>
+    <nav class="navbar navbar-expand-sm bg-white navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand mr-auto" href="index.html">
+            <img src="images/logo.png" alt="Logo" style="width: 110px; height: 60px;"/>
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+        <div class="collapse navbar-collapse"  id="navbars-rs-food">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link font-weight-bold" href="home.aspx" style="font-size: 18px; color: #b38b6d;">Home</a></li>
+                <li class="nav-item"><a class="nav-link font-weight-bold" href="categories.aspx" style="font-size: 18px; color: #b38b6d;">Categories</a></li>
+                <li class="nav-item"><a class="nav-link font-weight-bold" href="View_cart.aspx" style="font-size: 18px; color: #b38b6d;">My Cart</a></li>
+                <li class="nav-item"><a class="nav-link font-weight-bold" href="contactus.aspx" style="font-size: 18px; color: #b38b6d;">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link font-weight-bold" href="aboutus.aspx" style="font-size: 18px; color: #b38b6d;">About Us</a></li>
+
+                <asp:Literal ID="Literal1" runat="server"> </asp:Literal>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
     <!-- End header -->
-    <form id="Form1" runat="server">
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-    </asp:ContentPlaceHolder>
-    </form>
-    <footer class="footer-area bg-f">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<h3>About Us</h3>
-					<p>We are the leading perfume store. We are providing the service for the last 20 years. We have sold more than 1 milion items till now. We were established in the year 2001. We have branches all over india and abroad. We are planning to move forward to expand our services.</p>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<h3>Contact information</h3>
-					<p class="lead">Kalawad  road,Rajkot-360002.</p>
-					<p class="lead"><a href="#">+ 91 1212121212</a></p>
-			<p class="lead"><a href="#">+ 91 2121212121</a></p>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<h3>Visit Our Website</h3>
-					<p class="lead">www.PerfumeStore.com</p>
-				</div>
-				<!--<div class="col-lg-3 col-md-6">
-					<h3>Subscribe</h3>
-					<div class="subscribe_form">
-						<form class="subscribe_form">
-							<input name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
-							<button type="submit" class="submit">SUBSCRIBE</button>
-							<div class="clearfix"></div>
-						</form>
-					</div>-->
-					<!--<ul class="list-inline f-social">
-						<li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>-->
-			</div>
-		</div>
-		
-		<div class="copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<p class="company-name">All Rights Reserved.</a>  
-					<a href="https://html.design/">Design By : Priyansiba Jadeja & Kriyanshi Kamani</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</footer>
+    <div class="main-content">
+        <form id="Form1" runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+
+        </form>
+         
+    </div>
+
+
+    <footer class="footer-area" style="background: linear-gradient(to right, #6f4e37, #c2b280, #b38b6d);
+        color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <h3>About Us</h3>
+                <p>We are the leading perfume store. Serving for the last 20 years, we have sold over 1 million items. Established in 2001, with branches across India and abroad. Planning to expand our services.</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3>Contact information</h3>
+                <p class="lead">Kalawad Road, Rajkot-360002.</p>
+                <p class="lead"><a href="tel:+911212121212">+91 1212121212</a></p>
+                <p class="lead"><a href="tel:+912121212121">+91 2121212121</a></p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3>Visit Our Website</h3>
+                <p class="lead">www.PerfumeStore.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright mt-4" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="company-name">All Rights Reserved.  
+                        <a href="https://html.design/" style="color: white;">Design By : Priyansiba Jadeja & Kriyanshi Kamani</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
     <!-- End Footer -->
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
     <!-- ALL JS FILES -->

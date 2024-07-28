@@ -9,7 +9,7 @@
         <div class="form-outline mb-4">
             <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" required="required"></asp:TextBox>
             <label class="form-label" for="TextBox3">
-                Email address</label>
+                Enter Name</label>
         </div>
         <div class="form-outline mb-4">
             <asp:TextBox ID="TextBox2" runat="server" required="required" CssClass="form-control"

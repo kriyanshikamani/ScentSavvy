@@ -9,6 +9,7 @@ public partial class admin_Add_product : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        TextBox2.Attributes.Add("type", "date");
         Dbo db = new Dbo();
         DataTable dt = db.getdata("select * from Categories");
         for (int i = 0; i < dt.Rows.Count; i++)
